@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boal Analytics — Isaac Boal</title>
+<meta name="description" content="Campaign data analytics for startups and small businesses. Based in Michigan.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: #F7F3ED;
+  color: #1C1714;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ── NAV ── */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 60px;
+  border-bottom: 1px solid #DDD5C8;
+}
+
+.nav-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #1C1714;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.nav-right a {
+  font-size: 13px;
+  color: #8C7B6E;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+
+.nav-right a:hover { color: #1C1714; }
+
+.nav-cta {
+  background: #1C1714 !important;
+  color: #F7F3ED !important;
+  padding: 10px 22px;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.05em !important;
+}
+
+/* ── HERO ── */
+.hero {
+  padding: 100px 60px 90px;
+  border-bottom: 1px solid #DDD5C8;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 80px;
+  align-items: end;
+}
+
+.hero-left {}
+
+.hero-tag {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8C7B6E;
+  margin-bottom: 32px;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(48px, 5.5vw, 76px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: #1C1714;
+  margin-bottom: 32px;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: #6B4C3B;
+}
+
+.hero-sub {
+  font-size: 16px;
+  color: #5C4E44;
+  max-width: 480px;
+  line-height: 1.75;
+  margin-bottom: 44px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-dark {
+  display: inline-block;
+  background: #1C1714;
+  color: #F7F3ED;
+  padding: 13px 28px;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  transition: opacity 0.2s;
+}
+
+.btn-dark:hover { opacity: 0.8; }
+
+.btn-outline {
+  display: inline-block;
+  background: transparent;
+  color: #1C1714;
+  padding: 13px 28px;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  border: 1px solid #C4B8AC;
+  transition: border-color 0.2s;
+}
+
+.btn-outline:hover { border-color: #1C1714; }
+
+.hero-right {
+  padding-bottom: 4px;
+}
+
+.hero-card {
+  background: #EDE5D8;
+  padding: 32px 28px;
+  border: 1px solid #D4C5B0;
+}
+
+.hero-card-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #8C7B6E;
+  margin-bottom: 20px;
+}
+
+.hero-card-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px 0;
+  border-bottom: 1px solid #D4C5B0;
+  font-size: 13px;
+}
+
+.hero-card-item:last-child { border-bottom: none; }
+
+.hero-card-item span:first-child { color: #5C4E44; }
+.hero-card-item span:last-child { color: #1C1714; font-weight: 400; }
+
+.hero-card-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 20px;
+  font-size: 12px;
+  color: #6B4C3B;
+}
+
+.status-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #6B4C3B;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* ── ABOUT ── */
+.about {
+  padding: 90px 60px;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 80px;
+  border-bottom: 1px solid #DDD5C8;
+}
+
+.about-label {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8C7B6E;
+  padding-top: 6px;
+}
+
+.about-content h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  color: #1C1714;
+}
+
+.about-content p {
+  font-size: 15px;
+  color: #5C4E44;
+  line-height: 1.8;
+  max-width: 600px;
+  margin-bottom: 16px;
+}
+
+.about-content p:last-child { margin-bottom: 0; }
+
+.about-content strong { color: #1C1714; font-weight: 500; }
+
+.credentials {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 36px;
+  border-top: 1px solid #DDD5C8;
+}
+
+.credential {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  padding: 16px 0;
+  border-bottom: 1px solid #DDD5C8;
+  font-size: 14px;
+  color: #5C4E44;
+}
+
+.credential span:last-child {
+  font-size: 12px;
+  color: #8C7B6E;
+  white-space: nowrap;
+}
+
+/* ── SERVICES ── */
+.services {
+  padding: 90px 60px;
+  border-bottom: 1px solid #DDD5C8;
+}
+
+.services-header {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 80px;
+  margin-bottom: 52px;
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8C7B6E;
+  padding-top: 6px;
+}
+
+.services-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #1C1714;
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.service-row {
+  display: grid;
+  grid-template-columns: 200px 1fr 1fr auto;
+  gap: 40px;
+  align-items: start;
+  padding: 32px 0;
+  border-top: 1px solid #DDD5C8;
+  transition: background 0.15s;
+}
+
+.service-row:last-child { border-bottom: 1px solid #DDD5C8; }
+
+.service-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  color: #8C7B6E;
+  padding-top: 3px;
+}
+
+.service-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: #1C1714;
+  line-height: 1.2;
+}
+
+.service-tag {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8C7B6E;
+  margin-top: 6px;
+}
+
+.service-desc {
+  font-size: 14px;
+  color: #5C4E44;
+  line-height: 1.7;
+}
+
+.service-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #1C1714;
+  white-space: nowrap;
+  text-align: right;
+}
+
+/* ── FLAGSHIP OFFER ── */
+.flagship {
+  padding: 90px 60px;
+  border-bottom: 1px solid #DDD5C8;
+}
+
+.flagship-header {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 80px;
+  margin-bottom: 44px;
+}
+
+.flagship-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #1C1714;
+}
+
+.flagship-card {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  border: 1px solid #1C1714;
+  background: #FFFEFB;
+}
+
+.flagship-left {
+  padding: 44px 44px 44px 48px;
+  border-right: 1px solid #DDD5C8;
+}
+
+.flagship-lead {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: #1C1714;
+  margin-bottom: 32px;
+}
+
+.flagship-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.stack-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+  padding: 14px 0;
+  border-top: 1px solid #E5DDD0;
+  font-size: 14px;
+  color: #5C4E44;
+}
+
+.stack-row:first-child { border-top: none; }
+
+.stack-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  color: #8C7B6E;
+  white-space: nowrap;
+}
+
+.stack-total {
+  border-top: 1px solid #1C1714;
+  margin-top: 4px;
+  font-weight: 500;
+  color: #1C1714;
+}
+
+.stack-total .stack-val {
+  color: #1C1714;
+  font-size: 20px;
+}
+
+.flagship-right {
+  padding: 44px 40px;
+  background: #EDE5D8;
+  display: flex;
+  flex-direction: column;
+}
+
+.flagship-price-label {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8C7B6E;
+  margin-bottom: 4px;
+}
+
+.flagship-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 1;
+  color: #1C1714;
+  margin-bottom: 28px;
+}
+
+.flagship-guarantee {
+  background: #FFFEFB;
+  border: 1px solid #D4C5B0;
+  padding: 20px 22px;
+}
+
+.guarantee-title {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #6B4C3B;
+  margin-bottom: 10px;
+}
+
+.guarantee-text {
+  font-size: 13px;
+  color: #5C4E44;
+  line-height: 1.6;
+}
+
+.guarantee-text strong { color: #1C1714; font-weight: 500; }
+
+.flagship-note {
+  font-size: 12px;
+  color: #8C7B6E;
+  text-align: center;
+  margin-top: 16px;
+  line-height: 1.5;
+}
+
+.services-promise {
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 1px solid #DDD5C8;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  font-style: italic;
+  color: #5C4E44;
+  max-width: 640px;
+  line-height: 1.5;
+}
+
+/* ── CASE STUDY ── */
+.casestudy {
+  padding: 90px 60px;
+  background: #EDE5D8;
+  border-bottom: 1px solid #DDD5C8;
+}
+
+.casestudy-header {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 80px;
+  margin-bottom: 52px;
+}
+
+.casestudy-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #1C1714;
+}
+
+.casestudy-body {
+  display: grid;
+  grid-template-columns: 200px 1fr 1fr;
+  gap: 80px;
+}
+
+.cs-block h3 {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8C7B6E;
+  margin-bottom: 16px;
+}
+
+.cs-block p {
+  font-size: 14px;
+  color: #5C4E44;
+  line-height: 1.75;
+}
+
+.cs-block p + p { margin-top: 12px; }
+
+.cs-outcomes {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.cs-outcome {
+  padding: 14px 0;
+  border-bottom: 1px solid #D4C5B0;
+  font-size: 14px;
+  color: #5C4E44;
+  display: flex;
+  gap: 12px;
+}
+
+.cs-outcome::before {
+  content: '—';
+  color: #8C7B6E;
+  flex-shrink: 0;
+}
+
+/* ── CTA ── */
+.cta {
+  padding: 100px 60px;
+  border-bottom: 1px solid #DDD5C8;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.cta h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 4vw, 54px);
+  font-weight: 500;
+  line-height: 1.1;
+  color: #1C1714;
+  margin-bottom: 24px;
+}
+
+.cta h2 em {
+  font-style: italic;
+  color: #6B4C3B;
+}
+
+.cta p {
+  font-size: 15px;
+  color: #5C4E44;
+  line-height: 1.75;
+  max-width: 480px;
+  margin-bottom: 36px;
+}
+
+/* ── FOOTER ── */
+footer {
+  padding: 32px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1C1714;
+}
+
+.footer-right {
+  font-size: 12px;
+  color: #8C7B6E;
+  letter-spacing: 0.04em;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 860px) {
+  nav { padding: 22px 28px; }
+  .nav-right a:not(.nav-cta) { display: none; }
+  .hero { grid-template-columns: 1fr; gap: 48px; padding: 64px 28px 60px; }
+  .hero-right { display: none; }
+  .about, .services-header, .casestudy-header, .cta { grid-template-columns: 1fr; gap: 20px; }
+  .flagship-header { grid-template-columns: 1fr; gap: 20px; }
+  .flagship-card { grid-template-columns: 1fr; }
+  .flagship-left { border-right: none; border-bottom: 1px solid #DDD5C8; padding: 32px 28px; }
+  .flagship-right { padding: 32px 28px; }
+  .flagship { padding: 60px 28px; }
+  .casestudy-body { grid-template-columns: 1fr; gap: 40px; }
+  .about, .services, .casestudy, .cta { padding: 60px 28px; }
+  .service-row { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .service-num { display: none; }
+  .service-price { text-align: left; }
+  footer { padding: 24px 28px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-name">Boal Analytics</div>
+  <div class="nav-right">
+    <a href="#services">Services</a>
+    <a href="#work">Work</a>
+    <a href="https://linkedin.com/in/isaac-boal-b27562379" target="_blank">LinkedIn</a>
+    <a href="mailto:isaacboal.marketing@gmail.com" class="nav-cta">Get in touch</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-tag">Data Analytics · West Michigan</p>
+    <h1>I help startups see<br>what their data is<br><em>actually</em> telling them.</h1>
+    <p class="hero-sub">Most companies run campaigns for months before realizing half the budget isn't working. I find that early — and show you exactly what to do about it.</p>
+    <div class="hero-actions">
+      <a href="https://calendly.com/isaacboal-marketing/free-campaign-audit" target="_blank" class="btn-dark">Get the Profit-Leak Audit</a>
+      <a href="#audit" class="btn-outline">How it works</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-card">
+      <p class="hero-card-label">Currently</p>
+      <div class="hero-card-item">
+        <span>Client</span>
+        <span>Runway App</span>
+      </div>
+      <div class="hero-card-item">
+        <span>Engagement</span>
+        <span>Analytics Retainer</span>
+      </div>
+      <div class="hero-card-item">
+        <span>Based in</span>
+        <span>Grand Rapids, MI</span>
+      </div>
+      <div class="hero-card-item">
+        <span>Response time</span>
+        <span>Within 24 hrs</span>
+      </div>
+      <div class="hero-card-item">
+        <span>Availability</span>
+        <span>Taking new clients</span>
+      </div>
+      <div class="hero-card-status">
+        <div class="status-dot"></div>
+        Available for new projects
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <p class="about-label">About</p>
+  <div class="about-content">
+    <h2>A marketing and finance student who actually knows the data side.</h2>
+    <p>I'm Isaac — currently a senior at Grand Valley State University finishing a double major in Marketing and Finance. Most people in analytics come from one direction. I can read a campaign dashboard and a P&L at the same time, which means I understand what the numbers mean for your business, not just what they say.</p>
+    <p>I started doing analytics work for <strong>Runway</strong>, a student-facing app, and turned it into a full retainer engagement. That experience is what convinced me this is the business I want to build — so I'm building it now, while finishing school, with the goal of running it remotely from <strong>Playa del Carmen</strong> within a year.</p>
+    <p>I work with startups and small businesses running paid marketing campaigns who want to stop guessing and start deciding with data.</p>
+    <div class="credentials">
+      <div class="credential">
+        <span>Google Data Analytics Certificate</span>
+        <span>2026</span>
+      </div>
+      <div class="credential">
+        <span>B.S. Marketing & Finance — GVSU</span>
+        <span>In progress, graduating in 2027</span>
+      </div>
+      <div class="credential">
+        <span>Campaign Analytics — Runway App</span>
+        <span>Active, started in May 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLAGSHIP OFFER -->
+<section class="flagship" id="audit">
+  <div class="flagship-header">
+    <p class="section-label" style="color:#A88B6E;">Start Here</p>
+    <h2>The Profit-Leak Audit</h2>
+  </div>
+  <div class="flagship-card">
+    <div class="flagship-left">
+      <p class="flagship-lead">I'll analyze your last 90 days of campaign data and show you exactly where money is leaking — and what to do about it.</p>
+      <div class="flagship-stack">
+        <div class="stack-row">
+          <span>Full 90-day campaign data analysis across every channel</span>
+          <span class="stack-val">$900</span>
+        </div>
+        <div class="stack-row">
+          <span>Wasted-spend report — every dollar going to the wrong place</span>
+          <span class="stack-val">$600</span>
+        </div>
+        <div class="stack-row">
+          <span>Your top 3 highest-impact moves, ranked by ROI</span>
+          <span class="stack-val">$500</span>
+        </div>
+        <div class="stack-row">
+          <span>A 30-minute walkthrough call so you actually understand it</span>
+          <span class="stack-val">$250</span>
+        </div>
+        <div class="stack-row stack-total">
+          <span>Total value</span>
+          <span class="stack-val">$2,250</span>
+        </div>
+      </div>
+    </div>
+    <div class="flagship-right">
+      <p class="flagship-price-label">Your investment</p>
+      <p class="flagship-price">$750</p>
+      <div class="flagship-guarantee">
+        <p class="guarantee-title">The guarantee</p>
+        <p class="guarantee-text">If I don't find at least <strong>$2,250 in wasted or recoverable ad spend</strong> — 3x what you paid me — the audit is free. You risk nothing.</p>
+      </div>
+      <a href="https://calendly.com/isaacboal-marketing/free-campaign-audit" target="_blank" class="btn-dark" style="width:100%;text-align:center;margin-top:24px;">Claim your audit →</a>
+      <p class="flagship-note">Most clients use what I find to fund the rest of the work.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header">
+    <p class="section-label">Ongoing Work</p>
+    <h2>Once we find the leaks,<br>here's how I help you fix them — and grow.</h2>
+  </div>
+  <div class="services-list">
+    <div class="service-row">
+      <div class="service-num">01</div>
+      <div>
+        <div class="service-name">Reporting Dashboard</div>
+        <div class="service-tag">Monthly retainer</div>
+      </div>
+      <div class="service-desc">A live dashboard connected to all your ad channels, a written monthly summary, and a review call. You'll never fly blind on your marketing spend again. <span style="display:block;margin-top:8px;color:#8C7B6E;font-size:13px;">Stacked value: $3,000/mo · You pay a fraction of that.</span></div>
+      <div class="service-price">$1,500–$2,500<span style="font-size:14px;color:#8C7B6E"> /mo</span></div>
+    </div>
+    <div class="service-row">
+      <div class="service-num">02</div>
+      <div>
+        <div class="service-name">Analytics Retainer</div>
+        <div class="service-tag">Monthly retainer</div>
+      </div>
+      <div class="service-desc">Everything in the dashboard, plus weekly insights, A/B test analysis, budget reallocation recommendations, and direct Slack access. I become your analytics lead — without the six-figure salary. <span style="display:block;margin-top:8px;color:#8C7B6E;font-size:13px;">Stacked value: $7,500/mo · A full-time hire costs 3–4x more.</span></div>
+      <div class="service-price">$3,000–$5,000<span style="font-size:14px;color:#8C7B6E"> /mo</span></div>
+    </div>
+    <div class="service-row">
+      <div class="service-num">03</div>
+      <div>
+        <div class="service-name">Analytics Build</div>
+        <div class="service-tag">One-time project</div>
+      </div>
+      <div class="service-desc">I build your entire analytics infrastructure from scratch — tracking, attribution, a full dashboard suite, and documentation your team can actually use. A foundation that pays for itself in clarity. <span style="display:block;margin-top:8px;color:#8C7B6E;font-size:13px;">Most builds roll straight into a monthly retainer.</span></div>
+      <div class="service-price">$5,000–$12,000</div>
+    </div>
+  </div>
+  <p class="services-promise">Every retainer is month-to-month. No long contracts, no lock-in. If I'm not making you money, you're free to walk — but my clients don't.</p>
+</section>
+
+<!-- CASE STUDY -->
+<section class="casestudy" id="work">
+  <div class="casestudy-header">
+    <p class="section-label">Work</p>
+    <h2>Runway — student app, live client.</h2>
+  </div>
+  <div class="casestudy-body">
+    <div></div>
+    <div class="cs-block">
+      <h3>The situation</h3>
+      <p>Runway is a student-facing app that was running paid UGC campaigns across multiple channels with no unified way to see what was working. Budget decisions were based on luck with the users. They needed clarity so that they could grow intentionally.</p>
+      <p>I came in, built a reporting foundation, and turned monthly analytics into a consistent process the team actually uses.</p>
+    </div>
+    <div class="cs-block">
+      <h3>What I delivered</h3>
+      <div class="cs-outcomes">
+        <div class="cs-outcome">Centralized Looker Studio dashboard connecting all campaign channels</div>
+        <div class="cs-outcome">Monthly reporting cadence with written summary and review call</div>
+        <div class="cs-outcome">Identified top-performing acquisition channels and flagged wasted spend</div>
+        <div class="cs-outcome">Ongoing retainer — still running today</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div></div>
+  <div>
+    <h2>Not sure if your<br>campaigns are working?<br><em>Let's find out.</em></h2>
+    <p>I offer a free 30-minute audit call — no pitch at the end, just findings. If there's an opportunity to work together after that, I'll put together a clear proposal. Most clients book within the week.</p>
+    <div class="hero-actions">
+      <a href="https://calendly.com/isaacboal-marketing/free-campaign-audit" target="_blank" class="btn-dark">Book free audit</a>
+      <a href="mailto:isaacboal.marketing@gmail.com" class="btn-outline">isaacboal.marketing@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-name">Boal Analytics</div>
+  <div class="footer-right">Isaac Boal · Grand Rapids, MI · isaacboal.marketing@gmail.com · <a href="https://linkedin.com/in/isaac-boal-b27562379" target="_blank" style="color:#8C7B6E;text-decoration:underline;text-underline-offset:3px;">LinkedIn</a></div>
+</footer>
+
+</body>
+</html>
