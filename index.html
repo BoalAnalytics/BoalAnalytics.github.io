@@ -36,6 +36,15 @@ nav {
   font-weight: 500;
   letter-spacing: 0.02em;
   color: #1C1714;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo-img {
+  height: 28px;
+  width: auto;
+  display: block;
 }
 
 .nav-right {
@@ -633,10 +642,10 @@ footer {
 <body>
 
 <nav>
-  <div class="nav-name">Boal Analytics</div>
+  <div class="nav-name"><img src="logo.png" alt="Boal Analytics logo" class="nav-logo-img" />Boal Analytics</div>
   <div class="nav-right">
     <a href="#services">Services</a>
-    <a href="#work">Work</a>
+    <a href="#audit">Free Audit</a>
     <a href="https://linkedin.com/in/isaac-boal-b27562379" target="_blank">LinkedIn</a>
     <a href="mailto:isaacboal.marketing@gmail.com" class="nav-cta">Get in touch</a>
   </div>
@@ -655,14 +664,14 @@ footer {
   </div>
   <div class="hero-right">
     <div class="hero-card">
-      <p class="hero-card-label">Currently</p>
+      <p class="hero-card-label">At a glance</p>
       <div class="hero-card-item">
-        <span>Client</span>
-        <span>Runway App</span>
+        <span>Focus</span>
+        <span>Campaign Analytics</span>
       </div>
       <div class="hero-card-item">
-        <span>Engagement</span>
-        <span>Analytics Retainer</span>
+        <span>Platforms</span>
+        <span>Meta · Google · GA4</span>
       </div>
       <div class="hero-card-item">
         <span>Based in</span>
@@ -689,21 +698,21 @@ footer {
   <p class="about-label">About</p>
   <div class="about-content">
     <h2>A marketing and finance student who actually knows the data side.</h2>
-    <p>I'm Isaac — currently a senior at Grand Valley State University finishing a double major in Marketing and Finance. Most people in analytics come from one direction. I can read a campaign dashboard and a P&L at the same time, which means I understand what the numbers mean for your business, not just what they say.</p>
-    <p>I started doing analytics work for <strong>Runway</strong>, a student-facing app, and turned it into a full retainer engagement. That experience is what convinced me this is the business I want to build — so I'm building it now, while finishing school, with the goal of running it remotely from <strong>Playa del Carmen</strong> within a year.</p>
+    <p>I'm Isaac — a senior at Grand Valley State University finishing a double major in Marketing and Finance. Most people in analytics come from one direction. I can read a campaign dashboard and a P&L at the same time, which means I understand what the numbers mean for your business, not just what they say.</p>
+    <p>I'm building Boal Analytics now, while finishing school, with a clear goal: help businesses make sharper decisions with their data.</p>
     <p>I work with startups and small businesses running paid marketing campaigns who want to stop guessing and start deciding with data.</p>
     <div class="credentials">
       <div class="credential">
         <span>Google Data Analytics Certificate</span>
-        <span>2026</span>
+        <span>May, 2026</span>
       </div>
       <div class="credential">
         <span>B.S. Marketing & Finance — GVSU</span>
-        <span>In progress, graduating in 2027</span>
+        <span>In progress, graduating May, 2027</span>
       </div>
       <div class="credential">
-        <span>Campaign Analytics — Runway App</span>
-        <span>Active, started in May 2026</span>
+        <span>Honors Certificate — Data Analytics</span>
+        <span>Earned</span>
       </div>
     </div>
   </div>
@@ -789,32 +798,7 @@ footer {
       <div class="service-price">$5,000–$12,000</div>
     </div>
   </div>
-  <p class="services-promise">Every retainer is month-to-month. No long contracts, no lock-in. If I'm not making you money, you're free to walk — but my clients don't.</p>
-</section>
-
-<!-- CASE STUDY -->
-<section class="casestudy" id="work">
-  <div class="casestudy-header">
-    <p class="section-label">Work</p>
-    <h2>Runway — student app, live client.</h2>
-  </div>
-  <div class="casestudy-body">
-    <div></div>
-    <div class="cs-block">
-      <h3>The situation</h3>
-      <p>Runway is a student-facing app that was running paid UGC campaigns across multiple channels with no unified way to see what was working. Budget decisions were based on luck with the users. They needed clarity so that they could grow intentionally.</p>
-      <p>I came in, built a reporting foundation, and turned monthly analytics into a consistent process the team actually uses.</p>
-    </div>
-    <div class="cs-block">
-      <h3>What I delivered</h3>
-      <div class="cs-outcomes">
-        <div class="cs-outcome">Centralized Looker Studio dashboard connecting all campaign channels</div>
-        <div class="cs-outcome">Monthly reporting cadence with written summary and review call</div>
-        <div class="cs-outcome">Identified top-performing acquisition channels and flagged wasted spend</div>
-        <div class="cs-outcome">Ongoing retainer — still running today</div>
-      </div>
-    </div>
-  </div>
+  <p class="services-promise">Every retainer is month-to-month. No long contracts, no lock-in. If I'm not making you money, you're free to walk.</p>
 </section>
 
 <!-- CTA -->
@@ -822,7 +806,7 @@ footer {
   <div></div>
   <div>
     <h2>Not sure if your<br>campaigns are working?<br><em>Let's find out.</em></h2>
-    <p>I offer a free 30-minute audit call — no pitch at the end, just findings. If there's an opportunity to work together after that, I'll put together a clear proposal. Most clients book within the week.</p>
+    <p>I offer a free 30-minute audit call — no pitch at the end, just findings. If there's an opportunity to work together after that, I'll put together a clear proposal.</p>
     <div class="hero-actions">
       <a href="https://calendly.com/isaacboal-marketing/free-campaign-audit" target="_blank" class="btn-dark">Book free audit</a>
       <a href="mailto:isaacboal.marketing@gmail.com" class="btn-outline">isaacboal.marketing@gmail.com</a>
